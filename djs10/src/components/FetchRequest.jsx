@@ -27,15 +27,18 @@ export default function FetchRequest() {
     <div>
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      {data && (
-        <ul>
-          {data.map(post => (
-            <li key={post.id}>
-              <h2>{post.title}</h2>
-              <p>{post.body}</p>
-            </li>
-          ))}
-        </ul>
+      {!error && data && (
+        <>
+          <h1>Posts</h1>
+          <ul style={{ listStyleType: 'none', padding: 0 }}>
+            {data.map((post, index) => (
+              <li key={post.id} style={{ marginBottom: '1em' }}>
+                <h2>{index + 1}. {post.title}</h2>
+                <p>{post.body}</p>
+              </li>
+            ))}
+          </ul>
+        </>
       )}
     </div>
   );

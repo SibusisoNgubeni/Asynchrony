@@ -6,9 +6,7 @@ function App() {
   return (
     <>
     <FetchRequest/>
-      <div>
-        <h1>hello world</h1>
-      </div>
+    
       
     </>
   )
