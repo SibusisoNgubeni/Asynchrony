@@ -6,8 +6,9 @@ export default function FetchRequest() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
+    fetch('https://podcast-api.netlify.app/genre')
       .then(response => {
+        
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
